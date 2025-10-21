@@ -27,7 +27,6 @@ pipeline {
             sh 'docker build -t pablohoffmann/numeric-app:""$GIT_COMMIT"" .'
             sh 'docker push pablohoffmann/numeric-app:""$GIT_COMMIT""'
           }
-
         }
 
       }
