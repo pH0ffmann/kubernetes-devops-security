@@ -19,5 +19,15 @@ pipeline {
               }
             }
         }
+
+      stage('Docker Build and Push') {
+        steps {
+          sh 'printenv'
+          sh 'docker build -t pablohoffmann/numeric-app:""$GIT_COMMIT"" .'
+          sh 'docker push pablohoffmann/numeric-app:""$GIT_COMMIT""'
+        }
+
+      }
+
     }
 }
